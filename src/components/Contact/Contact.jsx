@@ -2,12 +2,13 @@ import styles from "./Contact.module.css";
 import { LuUser } from "react-icons/lu";
 import { LuPhone } from "react-icons/lu";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice.js";
+import { deleteContact } from "../../redux/contactsOps.js";
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const deleteSelectedContact = (contactId) => {
     dispatch(deleteContact(contactId));
+    console.log(contactId);
   };
 
   return (

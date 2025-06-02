@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addContact, fetchContacts } from "./contactsOps.js";
+import { addContact, deleteContact, fetchContacts } from "./contactsOps.js";
 // import defaultContacts from "../../src/components/defaultContacts.json";
 
 const initialState = {
@@ -37,18 +37,20 @@ const contactsSlice = createSlice({
       .addCase(addContact.rejected, (state, { payload }) => {
         state.error = payload;
         state.loading = false;
+      })
+      .addCase(deleteContact.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteContact.fulfilled, (state, { payload }) => {
+        // state.items = payload;
+        state.items = state.items.filter((item) => item.id !== payload);
+        console.log(state.items);
+        state.loading = false;
+      })
+      .addCase(deleteContact.rejected, (state, { payload }) => {
+        state.error = payload;
+        state.loading = false;
       });
-    // .addCase(deleteContact.pending, (state) => {
-    //   state.loading = true;
-    // })
-    // .addCase(deleteContact.fulfilled, (state, { payload }) => {
-    //   state.items = payload;
-    //   state.loading = false;
-    // })
-    // .addCase(deleteContact.rejected, (state, { payload }) => {
-    //   state.error = payload;
-    //   state.loading = false;
-    // });
   },
 });
 
@@ -65,5 +67,5 @@ const contactsSlice = createSlice({
 //   },
 // });
 
-export const { deleteContact } = contactsSlice.actions;
+// export const { deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
