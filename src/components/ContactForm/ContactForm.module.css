@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    width: 400px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    padding: 10px 20px;
+}
+
+.label {
+    padding: 10px 20px;
+    width: 300px;
+    text-align: start;
+    font-weight: 500;
+}
+
+.field {
+    width: 300px;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button {
+    margin: 20px;
+    color: var(--primary-color);
+}
+
+.button:hover {
+    border: 1px solid var(--primary-color);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}

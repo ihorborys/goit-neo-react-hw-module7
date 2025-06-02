@@ -1,0 +1,46 @@
+ul, li {
+    all: unset;
+}
+
+p {
+    all: unset;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    width: 320px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 500;
+}
+
+.listItem {
+    font-size: 14px;
+}
+
+.listItemIconContainer {
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+
+.listItemIcon {
+    color: var(--primary-color);
+}
+
+.listItemButton {
+    color: var(--primary-color);
+}
+
+.listItemButton:hover {
+    border: 1px solid var(--primary-color);
+}
