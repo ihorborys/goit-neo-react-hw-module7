@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const ErrorMessage = () => {
   const error = useSelector((state) => state.contacts.error);
+
   // const errorMessage = useSelector(
   //   (state) => state.contacts.payload.error.message
   // );

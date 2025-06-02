@@ -18,6 +18,8 @@ const ContactList = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  console.log(contacts);
+
   const searchedContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(filterName.toLowerCase()),
   );
