@@ -3,7 +3,7 @@ import Contact from "../Contact/Contact.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 // import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getContactsThunk } from "../../redux/contactsOps.js";
+import { fetchContacts } from "../../redux/contactsOps.js";
 import Loader from "../Loader/Loader.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 
@@ -15,7 +15,7 @@ const ContactList = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getContactsThunk());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   const searchedContacts = contacts.filter((contact) =>
