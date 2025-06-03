@@ -8,7 +8,6 @@ const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const deleteSelectedContact = (contactId) => {
     dispatch(deleteContact(contactId));
-    console.log(contactId);
   };
 
   return (
