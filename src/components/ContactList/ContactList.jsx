@@ -6,12 +6,18 @@ import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps.js";
 import Loader from "../Loader/Loader.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
+import {
+  selectContacts,
+  selectError,
+  selectLoading,
+} from "../../redux/contactsSlice.js";
+import { selectNameFilter } from "../../redux/filtersSlice.js";
 
 const ContactList = () => {
-  const contacts = useSelector((state) => state.contacts.items);
-  const filterName = useSelector((state) => state.filters.name);
-  const loading = useSelector((state) => state.contacts.loading);
-  const error = useSelector((state) => state.contacts.error);
+  const contacts = useSelector(selectContacts);
+  const filterName = useSelector(selectNameFilter);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
   const dispatch = useDispatch();
   useEffect(() => {

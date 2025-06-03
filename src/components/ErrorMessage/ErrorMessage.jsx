@@ -1,8 +1,9 @@
 import styles from "./ErrorMessage.module.css";
 import { useSelector } from "react-redux";
+import { selectError } from "../../redux/contactsSlice.js";
 
 const ErrorMessage = () => {
-  const error = useSelector((state) => state.contacts.error);
+  const error = useSelector(selectError);
 
   // const errorMessage = useSelector(
   //   (state) => state.contacts.payload.error.message

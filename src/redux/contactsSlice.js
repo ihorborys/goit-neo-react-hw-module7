@@ -53,18 +53,17 @@ const contactsSlice = createSlice({
   },
 });
 
-// const contactsSlice = createSlice({
-//   name: "contacts",
-//   initialState,
-//   reducers: {
-//     addContact: (state, action) => {
-//       state.items.push(action.payload);
-//     },
-//     deleteContact: (state, action) => {
-//       state.items = state.items.filter((item) => item.id !== action.payload);
-//     },
-//   },
-// });
+export const selectContacts = (state) => state.contacts.items;
+export const selectLoading = (state) => state.contacts.loading;
+export const selectError = (state) => state.contacts.error;
 
-// export const { deleteContact } = contactsSlice.actions;
+// export const selectFilteredContacts = createSelector(
+//   [selectContacts, selectNameFilter],
+//   (contacts, filter) => {
+//     return contacts.filter((contact) =>
+//       contact.name.toLowerCase().includes(filter.toLowerCase()),
+//     );
+//   },
+// );
+
 export const contactsReducer = contactsSlice.reducer;
