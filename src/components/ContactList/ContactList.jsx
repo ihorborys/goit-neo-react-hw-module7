@@ -9,13 +9,14 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import {
   selectContacts,
   selectError,
+  selectFilteredContacts,
   selectLoading,
 } from "../../redux/contactsSlice.js";
 import { selectNameFilter } from "../../redux/filtersSlice.js";
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
-  const filterName = useSelector(selectNameFilter);
+  const searchedContacts = useSelector(selectFilteredContacts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
@@ -26,9 +27,15 @@ const ContactList = () => {
 
   console.log(contacts);
 
-  const searchedContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filterName.toLowerCase()),
-  );
+  // const searchedContacts = contacts.filter((contact) =>
+  //   contact.name.toLowerCase().includes(filterName.toLowerCase()),
+  // );
+
+  //
+  // console.log(searchedContacts);
+
+  // const searchedContacts = selectFilteredContacts();
+  console.log(selectFilteredContacts);
 
   return (
     <div>
